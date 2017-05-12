@@ -4,11 +4,21 @@
     <meta charset="utf-8">
     <title>Angular Routing Magic!</title>
     <link rel="stylesheet" href="/styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="/styles/style.css">
     <script src="/vendor/angular.min.js" type="text/javascript"></script>
     <script src="/vendor/angular-route.min.js" type="text/javascript"></script>
     <script src="/scripts/client.js" type="text/javascript"></script>
+    <script src="/scripts/getHighFive-service.js" type="text/javascript"></script>
   </head>
-  <body>
+  <body ng-app='myApp'>
+    <div class=""><img ng-src="images/bugsbunny.png" width=600 height=400/></div>
+    <h1>High Five</h1>
+    <div ng-controller='FirstController as fc' ng-init=''>
+       <button type="button" ng-click='fc.countFive()' >Give Me A High Five!</button>
+       <h2>Number of High Five Trys... {{fc.highfive}}</h2>
+       <h2>Level of Skills ... {{fc.skill}}</h2>
+       <h2>High five! {{fc.countfive}}</h2>
+    </div>
 
 
 
