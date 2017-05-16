@@ -1,6 +1,6 @@
-myApp.service('GetHighFives', function($http){
+myApp.service('GetHighFives', function(){
   var counter = 0;
-  var skill = 0;
+  // var skill = 0;
   var highFive = 0;
   // return current value
 
@@ -15,37 +15,36 @@ myApp.service('GetHighFives', function($http){
 
   this.randoSkill = function () {
     console.log('in random skills');
-    var skill = Math.floor(Math.random() * 10 + 1);
-    console.log("this is the skill", skill);
-    return skill;
+    this.skill = Math.floor(Math.random() * 10 + 1);
+    console.log("this is the skill", this.skill);
+    return this.skill;
 
   };
-    this.randoSkill();
 
 
   this.highFive = function () {
     console.log('in random skills');
-    var highFive = Math.floor(Math.random() * 10 + 1);
+    var highfive = Math.floor(Math.random() * 10 + 1);
     console.log('this is the high five', highFive);
-    return highFive;
+    return highfive;
 
 
   };
 
   this.highFive();
 
-  this.countFive = function() {
-    console.log('button clicked');
-    if (highFive >= skill) {
-      console.log('highFive ->' , highFive);
-      console.log('skill ->' , skill);
+  this.countFive = function(foo) {
+    console.log('button clicked in service');
+    if (foo >= this.skill) {
+      console.log('highFive ->' , foo);
+      console.log('skill ->' , this.skill);
       counter++;
       console.log('wins:', counter);
       return counter;
     } else {
       console.log('sorry didnt match');
+      return counter;
     }
 
   };
-  this.countFive();
 }); // end service
