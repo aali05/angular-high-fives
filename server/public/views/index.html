@@ -9,14 +9,18 @@
     <script src="/vendor/angular-route.min.js" type="text/javascript"></script>
     <script src="/scripts/client.js" type="text/javascript"></script>
     <script src="/scripts/getHighFive-service.js" type="text/javascript"></script>
+    <base href="/">
   </head>
   <body>
-    <img ng-src="images/bugsbunny.png" width=600 height=400/>
-    <h1>Looney Tunes High Five!</h1>
-    <div ng-controller='FirstController as fc'>
-       <button type="button" ng-click='fc.highFive()'>Give Me A High Five!</button>
-        <h2>Successful high fives! {{fc.count}}</h2>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="/elmer">Elmer Fudd</a></li>
+        <li><a href="/bugs">Bugs Bunny</a></li>
+        <li><a href="/tweety">Tweety Bird</a></li>
+        <li><a href="/daffy">Daffy Duck</a></li>
+      </ul>
+    </nav>
+    <ng-view></ng-view>
 
 
 
