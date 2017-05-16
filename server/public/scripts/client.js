@@ -40,14 +40,45 @@ myApp.controller('FirstController', function( GetHighFives ){
 
 }); // end FirstController controller
 // controller
-myApp.controller('ElmerController', function () {
+myApp.controller('ElmerController', function (RandomNumber, GetHighFives) {
   console.log('NG');
+  var vm = this;
+  vm.skill = RandomNumber.randoNumb(4, 10);
+  vm.highFive = function(){
+    console.log('in high five on client');
+    vm.hf = GetHighFives.highFive();
+    console.log("high five ran num: ",vm.hf);
+    // .then(function () {
+    vm.count = GetHighFives.countFive(vm.hf);
+  };
 }); // end ElmerController
 
-myApp.controller('TweetyController', function () {
+myApp.controller('TweetyController', function (RandomNumber, GetHighFives) {
   console.log('NG');
+  var vm = this;
+  vm.skill = RandomNumber.randoNumb(6, 10);
+  vm.highFive = function(){
+    console.log('in high five on client');
+    vm.hf = GetHighFives.highFive();
+    console.log("high five ran num: ",vm.hf);
+    // .then(function () {
+    vm.count = GetHighFives.countFive(vm.hf);
+  };
 }); // end TweetyController
 
-myApp.controller('DaffyController', function () {
+myApp.controller('DaffyController', function (RandomNumber, GetHighFives) {
   console.log('NG');
+  var vm = this;
+  vm.count = 0;
+  // current count
+
+  vm.skill = GetHighFives.randoSkill();
+
+  vm.highFive = function(){
+    console.log('in high five on client');
+    vm.hf = GetHighFives.highFive();
+    console.log("high five ran num: ",vm.hf);
+    // .then(function () {
+    vm.count = GetHighFives.countFive(vm.hf);
+  };
 }); // end DaffyController
